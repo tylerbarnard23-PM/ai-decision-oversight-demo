@@ -906,7 +906,28 @@ const styles = `
     transition: transform 180ms ease;
     overflow-y: auto;
   }
-  .drawer__header{ display:flex; justify-content:space-between; align-items:center; margin-bottom: 10px; }
+  .drawer__header{
+  position: sticky;
+  top: 0;
+  z-index: 5;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: calc(12px + env(safe-area-inset-top)) 0 12px;
+  margin-bottom: 10px;
+
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--line);
+}
+
+.drawer__header .btn{
+  background: rgba(2,6,23,0.06);
+  border: 1px solid var(--line);
+  color: rgba(15,23,42,0.9);
+}
 
   .drawer--open{ pointer-events: auto; }
   .drawer--open .drawer__backdrop{ opacity: 1; display:block; }
